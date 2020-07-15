@@ -22,12 +22,12 @@
     <div class="header_content_3pc"></div>
 
     <a href="/GetIndexPageServlet" title="go to start page">
-        <div class="header_content_3pc"><span id="logo_text">Taxi Service</span><br>
-            <span id="text_under_the_logo"> Dear friend! Let's order  taxi</span>
+        <div class="header_content_3pc"><span id="logo_text">Orders Application</span><br>
+            <span id="text_under_the_logo"> Dear friend! Let's work with orders</span>
         </div>
 
     </a>
-    <div class="header_content_3pc">
+    <!--<div class="header_content_3pc">
 
         <a href="/LogoutServlet">
             <div id="logout_container"><span id="text_right_the_logo"> ${message_for_logout}</span></div>
@@ -37,7 +37,7 @@
         </div>
 
 
-    </div>
+    </div>-->
 </div>
 
 </body>
