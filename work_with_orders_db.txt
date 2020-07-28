@@ -1,0 +1,39 @@
+tables
+
+ordered
+delivered
+users
+clients
+
+table clients
+id name
+
+CREATE TABLE IF NOT EXISTS clients (
+		id SMALLINT NOT NULL AUTO_INCREMENT,
+		name VARCHAR(30) NOT NULL DEFAULT 'noname',  		
+		PRIMARY KEY (id)
+	);
+
+INSERT INTO clients (name) 
+		VALUES
+		('Epicenter 1'),
+		('Epicenter 2'),
+		('Nova linia');
+
+table users
+
+CREATE TABLE IF NOT EXISTS users (
+		id SMALLINT NOT NULL AUTO_INCREMENT,
+		name VARCHAR(30) NOT NULL DEFAULT 'noname',
+  		email VARCHAR(35) UNIQUE NOT NULL DEFAULT 'absent',
+		password VARCHAR(20) NOT NULL DEFAULT 'empty password',
+		PRIMARY KEY (id)
+	);
+
+INSERT INTO users (name, email, password) 
+		VALUES
+		('Natalia', 'info@radosvit.ua', '12345a'),
+		('Volodymyr', 'sales@radosvit.cua', 'password1_1'),
+		('Radomyr', 'radomyr@ukr.net', 'password1_3');
+
+DROP TABLE users;

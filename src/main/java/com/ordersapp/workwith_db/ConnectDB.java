@@ -8,10 +8,10 @@ import java.sql.Statement;
 public class ConnectDB {
     private Connection connection = null;
     private Statement statement = null;
-    private String drivername = "com.mysql.jdbc.Driver";
+    private String drivername = "com.mysql.cj.jdbc.Driver";
     private String user = "root";
     private String password = "root566";
-    private String urlDB = "jdbc:mysql://localhost/orders_db";
+    private String urlDB = "jdbc:mysql://localhost/orders_db?useUnicode=true&serverTimezone=UTC";
 
     public Connection getConnection() {
         try {

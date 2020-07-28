@@ -20,7 +20,7 @@
 <body>
 <div class="maincontent_admin_menu">
     <H3>Admin menu</H3>
-<a href="#">Create table CLIENTS</a>
+<a href="/CreateClientsTableServlet">Create table CLIENTS</a>
 
 </div>
 </body>
