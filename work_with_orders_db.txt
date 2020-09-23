@@ -10,15 +10,19 @@ id name
 
 CREATE TABLE IF NOT EXISTS clients (
 		id SMALLINT NOT NULL AUTO_INCREMENT,
-		name VARCHAR(30) NOT NULL DEFAULT 'noname',  		
+		name VARCHAR(30) UNIQUE NOT NULL DEFAULT 'noname',  		
 		PRIMARY KEY (id)
 	);
 
 INSERT INTO clients (name) 
 		VALUES
-		('Epicenter 1'),
-		('Epicenter 2'),
-		('Nova linia');
+		('Epicenter'),		
+		('Nova linia'),
+		('Leroy Merlin'),
+		('Auchan'),
+		('Rozetka');
+
+DROP TABLE clients;
 
 table users
 
