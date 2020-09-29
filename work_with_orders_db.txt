@@ -10,7 +10,7 @@ id name
 
 CREATE TABLE IF NOT EXISTS clients (
 		id SMALLINT NOT NULL AUTO_INCREMENT,
-		name VARCHAR(30) UNIQUE NOT NULL DEFAULT 'noname',  		
+		name VARCHAR(50) UNIQUE NOT NULL DEFAULT 'noname',  		
 		PRIMARY KEY (id)
 	);
 
@@ -41,3 +41,19 @@ INSERT INTO users (name, email, password)
 		('Radomyr', 'radomyr@ukr.net', 'password1_3');
 
 DROP TABLE users;
+
+CREATE TABLE IF NOT EXISTS orders (
+		id SMALLINT NOT NULL AUTO_INCREMENT,
+		comment VARCHAR(30),
+		confirmed DATE,		
+		client_name VARCHAR(50),
+		FOREIGN KEY (client_name)  REFERENCES clients (name),
+		PRIMARY KEY (id)
+	);
+INSERT INTO orders (comment, confirmed, client_name )
+		VALUES
+		('','19.10.2020','Rozetka'),
+		('sulatex','20.10.2020','Auchan'),
+		('na kotushkah',NULL ,'Epicenter');
+
+DROP TABLE orders;
