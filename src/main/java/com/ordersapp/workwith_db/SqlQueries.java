@@ -20,4 +20,9 @@ public class SqlQueries {
             "('Leroy Merlin')," +
             "('Auchan')," +
             "('Rozetka');";
+    public static final String INSERT_USERS_TO_TABLE ="INSERT INTO users (name, email, password)" +
+            "VALUES" +
+            "('Natalia', 'info@radosvit.ua', '12345a')," +
+            "('Volodymyr', 'sales@radosvit.cua', 'password1_1')," +
+            "('Radomyr', 'radomyr@ukr.net', 'password1_3');";
 }
