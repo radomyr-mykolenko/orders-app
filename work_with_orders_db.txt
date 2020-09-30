@@ -47,13 +47,17 @@ CREATE TABLE IF NOT EXISTS orders (
 		comment VARCHAR(30),
 		confirmed DATE,		
 		client_name VARCHAR(50),
+		order_number INT,
+		date_of_order DATE,
+		shipment_date DATE,
+		shipped_date DATE,
 		FOREIGN KEY (client_name)  REFERENCES clients (name),
 		PRIMARY KEY (id)
 	);
-INSERT INTO orders (comment, confirmed, client_name )
+INSERT INTO orders (comment, confirmed, client_name, order_number, date_of_order, shipment_date, shipped_date )
 		VALUES
-		('','19.10.2020','Rozetka'),
-		('sulatex','20.10.2020','Auchan'),
-		('na kotushkah',NULL ,'Epicenter');
+		('','19.10.2020','Rozetka',546,'2020.10.09','2020.10.10','2020.10.28'),
+		('sulatex','20.10.2020','Auchan',56787,'2020.10.10','2020.10.30','2020.10.28'),
+		('na kotushkah',NULL ,'Epicenter',41852,'2020.10.11','2020.10.30','2020.10.27');
 
 DROP TABLE orders;
