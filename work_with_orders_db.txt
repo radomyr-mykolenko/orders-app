@@ -42,6 +42,19 @@ INSERT INTO users (name, email, password)
 
 DROP TABLE users;
 
+CREATE TABLE IF NOT EXISTS goods (
+		id SMALLINT NOT NULL AUTO_INCREMENT,
+		short_name VARCHAR(40) UNIQUE NOT NULL,
+		long_name VARCHAR(100),
+		weight SMALLINT,
+		PRIMARY KEY (id)
+	);
+INSERT INTO goods (short_name, long_name, weight)
+		VALUES 
+		('SHPPk 100','Polypropylene twine 100m colored',50),
+		('SHPPk 100 white','Polypropylene twine 100m white',50),
+		('SHPPk 100 green','Polypropylene twine 100m green',50);
+
 CREATE TABLE IF NOT EXISTS orders (
 		id SMALLINT NOT NULL AUTO_INCREMENT,
 		comment VARCHAR(30),
@@ -51,13 +64,17 @@ CREATE TABLE IF NOT EXISTS orders (
 		date_of_order DATE,
 		shipment_date DATE,
 		shipped_date DATE,
-		FOREIGN KEY (client_name)  REFERENCES clients (name),
+		SHPPk_100 SMALLINT,
+		SHPPk_100_white SMALLINT,
+		SHPPk_100_green SMALLINT,
+		FOREIGN KEY (client_name)  REFERENCES clients (name),		
 		PRIMARY KEY (id)
 	);
-INSERT INTO orders (comment, confirmed, client_name, order_number, date_of_order, shipment_date, shipped_date )
+INSERT INTO orders (comment, confirmed, client_name, order_number, date_of_order, shipment_date, shipped_date,
+SHPPk_100, SHPPk_100_white, SHPPk_100_green )
 		VALUES
-		('','19.10.2020','Rozetka',546,'2020.10.09','2020.10.10','2020.10.28'),
-		('sulatex','20.10.2020','Auchan',56787,'2020.10.10','2020.10.30','2020.10.28'),
-		('na kotushkah',NULL ,'Epicenter',41852,'2020.10.11','2020.10.30','2020.10.27');
+		('','19.10.2020','Rozetka',546,'2020.10.09','2020.10.10','2020.10.28',0,50,20),
+		('sulatex','20.10.2020','Auchan',56787,'2020.10.10','2020.10.30','2020.10.28',1,1,2),
+		('na kotushkah',NULL ,'Epicenter',41852,'2020.10.11','2020.10.30','2020.10.27',6,7,7);
 
 DROP TABLE orders;
